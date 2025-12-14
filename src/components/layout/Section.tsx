@@ -12,10 +12,10 @@ interface SectionProps {
 
 const paddingStyles = {
   none: { padding: '0' },
-  sm: { padding: 'var(--spacing-lg) 0' },
-  md: { padding: 'var(--spacing-2xl) 0' },
-  lg: { padding: 'var(--spacing-3xl) 0' },
-  xl: { padding: 'var(--spacing-4xl) 0' },
+  sm: { padding: 'clamp(1.5rem, 3vw, 1.5rem) 0' },
+  md: { padding: 'clamp(2rem, 4vw, 3rem) 0' },
+  lg: { padding: 'clamp(3rem, 5vw, 4rem) 0' },
+  xl: { padding: 'clamp(4rem, 6vw, 6rem) 0' },
 };
 
 const backgroundStyles = {
@@ -67,8 +67,8 @@ export const Section: React.FC<SectionProps> = ({
         style={{
           maxWidth: '1280px',
           margin: '0 auto',
-          paddingLeft: 'var(--spacing-md)',
-          paddingRight: 'var(--spacing-md)',
+          paddingLeft: 'clamp(0.5rem, 5vw, 2rem)',
+          paddingRight: 'clamp(0.5rem, 5vw, 2rem)',
         }}
       >
         {children}

@@ -20,10 +20,10 @@ const maxWidthStyles = {
 
 const paddingStyles = {
   none: { padding: '0' },
-  sm: { padding: '2rem 1rem' },
-  md: { padding: '3rem 1.5rem' },
-  lg: { padding: '4rem 2rem' },
-  xl: { padding: '5rem 2.5rem' },
+  sm: { padding: 'clamp(1rem, 3vw, 2rem) clamp(0.5rem, 5vw, 1rem)' },
+  md: { padding: 'clamp(2rem, 4vw, 3rem) clamp(0.75rem, 5vw, 1.5rem)' },
+  lg: { padding: 'clamp(3rem, 5vw, 4rem) clamp(1rem, 5vw, 2rem)' },
+  xl: { padding: 'clamp(4rem, 6vw, 5rem) clamp(1.25rem, 5vw, 2.5rem)' },
 };
 
 const backgroundStyles = {
