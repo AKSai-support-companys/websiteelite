@@ -1,5 +1,3 @@
-import React from 'react';
-
 export function NetworkOutro() {
   return (
     <section className="section network" data-section="network" aria-label="Network outro">
