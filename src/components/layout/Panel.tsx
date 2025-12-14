@@ -1,15 +1,12 @@
 import React, { ReactNode } from 'react';
 
-interface PanelProps {
+interface PanelProps extends React.HTMLAttributes<HTMLDivElement> {
   children: ReactNode;
-  className?: string;
   variant?: 'default' | 'glass' | 'glow' | 'solid';
   padding?: 'none' | 'sm' | 'md' | 'lg' | 'xl';
   borderRadius?: 'sm' | 'md' | 'lg' | 'xl' | 'full';
   border?: boolean;
   shadow?: boolean;
-  id?: string;
-  style?: React.CSSProperties;
 }
 
 const variantStyles = {
@@ -58,15 +55,17 @@ export const Panel: React.FC<PanelProps> = ({
   borderRadius = 'lg',
   border = true,
   shadow = true,
-  id,
   style,
+  ...rest
 }) => {
   const combinedStyle = {
     ...variantStyles[variant],
     ...paddingStyles[padding],
     ...borderRadiusStyles[borderRadius],
     ...(border && { border: variantStyles[variant].border }),
-    ...(shadow && { boxShadow: variant === 'glow' ? variantStyles[variant].boxShadow : 'var(--shadow-lg)' }),
+    ...(shadow && {
+      boxShadow: variant === 'glow' ? variantStyles[variant].boxShadow : 'var(--shadow-lg)',
+    }),
     ...style,
   } as React.CSSProperties;
 
@@ -80,7 +79,7 @@ export const Panel: React.FC<PanelProps> = ({
   ].join(' ');
 
   return (
-    <div id={id} style={combinedStyle} className={combinedClassName}>
+    <div {...rest} style={combinedStyle} className={combinedClassName}>
       {children}
     </div>
   );

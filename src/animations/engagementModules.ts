@@ -1,9 +1,12 @@
 import { gsap } from 'gsap';
 
-function setActive(modules, activeIndex, { immediate = false } = {}) {
+export interface AnimationContext {
+  reducedMotion: boolean;
+}
+
+function setActive(modules: HTMLElement[], activeIndex: number, { immediate = false } = {}) {
   modules.forEach((module, index) => {
     const isActive = index === activeIndex;
-
     const props = {
       opacity: isActive ? 1 : 0.38,
       filter: isActive ? 'blur(0px)' : 'blur(1.5px)',
@@ -11,12 +14,12 @@ function setActive(modules, activeIndex, { immediate = false } = {}) {
     };
 
     if (immediate) {
-      gsap.set(module, props);
+      gsap.set(module, props as any);
       return;
     }
 
     gsap.to(module, {
-      ...props,
+      ...(props as any),
       duration: 0.35,
       ease: 'power2.out',
       overwrite: true,
@@ -24,11 +27,11 @@ function setActive(modules, activeIndex, { immediate = false } = {}) {
   });
 }
 
-export function initEngagementModules({ reducedMotion }) {
-  const section = document.querySelector('[data-section="engagement"]');
+export function initEngagementModules({ reducedMotion }: AnimationContext) {
+  const section = document.querySelector<HTMLElement>('[data-section="engagement"]');
   if (!section) return;
 
-  const modules = Array.from(section.querySelectorAll('[data-engagement-module]'));
+  const modules = Array.from(section.querySelectorAll<HTMLElement>('[data-engagement-module]'));
   if (modules.length === 0) return;
 
   if (reducedMotion) {
@@ -36,7 +39,7 @@ export function initEngagementModules({ reducedMotion }) {
     return;
   }
 
-  gsap.set(modules, { opacity: 0.5, filter: 'blur(1px)', scale: 0.99 });
+  gsap.set(modules, { opacity: 0.5, filter: 'blur(1px)', scale: 0.99 } as any);
   setActive(modules, 0, { immediate: true });
 
   modules.forEach((module, index) => {
@@ -53,8 +56,8 @@ export function initEngagementModules({ reducedMotion }) {
           end: 'bottom 50%',
           onEnter: () => setActive(modules, index),
           onEnterBack: () => setActive(modules, index),
-        },
-      },
+        } as any,
+      } as any,
     );
   });
 
@@ -68,6 +71,6 @@ export function initEngagementModules({ reducedMotion }) {
       trigger: section,
       start: 'top 85%',
       toggleActions: 'play none none reverse',
-    },
-  });
+    } as any,
+  } as any);
 }

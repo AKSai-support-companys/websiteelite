@@ -1,12 +1,15 @@
 import { gsap } from 'gsap';
 
-export function initHero({ reducedMotion }) {
-  const section = document.querySelector('[data-section="hero"]');
+export interface AnimationContext {
+  reducedMotion: boolean;
+}
+
+export function initHero({ reducedMotion }: AnimationContext) {
+  const section = document.querySelector<HTMLElement>('[data-section="hero"]');
   if (!section) return;
 
-  const bg = section.querySelector('[data-hero-bg]');
-  const content = section.querySelector('[data-hero-content]');
-
+  const bg = section.querySelector<HTMLElement>('[data-hero-bg]');
+  const content = section.querySelector<HTMLElement>('[data-hero-content]');
   if (!bg || !content) return;
 
   if (reducedMotion) {
@@ -25,7 +28,7 @@ export function initHero({ reducedMotion }) {
         start: 'top top',
         end: 'bottom top',
         scrub: true,
-      },
+      } as any,
     })
     .to(bg, { filter: 'blur(14px)', scale: 1.06, ease: 'none' }, 0)
     .to(content, { opacity: 0, y: -40, ease: 'none' }, 0);

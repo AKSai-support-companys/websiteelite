@@ -1,5 +1,9 @@
 import { gsap } from 'gsap';
 
+export interface AnimationContext {
+  reducedMotion: boolean;
+}
+
 const NODE_OFFSETS = [
   { x: -14, y: 10 },
   { x: 16, y: -12 },
@@ -15,24 +19,23 @@ const NODE_OFFSETS = [
   { x: -8, y: -18 },
 ];
 
-export function initNetworkOutro({ reducedMotion }) {
-  const section = document.querySelector('[data-section="network"]');
+export function initNetworkOutro({ reducedMotion }: AnimationContext) {
+  const section = document.querySelector<HTMLElement>('[data-section="network"]');
   if (!section) return;
 
-  const frame = section.querySelector('[data-network-frame]');
-  const nodesContainer = section.querySelector('[data-network-nodes]');
-
+  const frame = section.querySelector<HTMLElement>('[data-network-frame]');
+  const nodesContainer = section.querySelector<HTMLElement>('[data-network-nodes]');
   if (!frame || !nodesContainer) return;
 
-  const nodes = Array.from(nodesContainer.querySelectorAll('.node'));
+  const nodes = Array.from(nodesContainer.querySelectorAll<HTMLElement>('.node'));
 
   if (reducedMotion) {
     gsap.set([frame, ...nodes], { clearProps: 'opacity,filter,transform' });
     return;
   }
 
-  gsap.set(frame, { opacity: 1, filter: 'blur(0px)', y: 0 });
-  gsap.set(nodes, { opacity: 1, x: 0, y: 0, force3D: true });
+  gsap.set(frame, { opacity: 1, filter: 'blur(0px)', y: 0 } as any);
+  gsap.set(nodes, { opacity: 1, x: 0, y: 0, force3D: true } as any);
 
   gsap
     .timeline({
@@ -41,26 +44,26 @@ export function initNetworkOutro({ reducedMotion }) {
         start: 'top 70%',
         end: 'bottom top',
         scrub: true,
-      },
+      } as any,
     })
     .to(
       nodes,
       {
-        x: (i) => (NODE_OFFSETS[i] ? NODE_OFFSETS[i].x : 0),
-        y: (i) => (NODE_OFFSETS[i] ? NODE_OFFSETS[i].y : 0),
+        x: (i: number) => (NODE_OFFSETS[i] ? NODE_OFFSETS[i].x : 0),
+        y: (i: number) => (NODE_OFFSETS[i] ? NODE_OFFSETS[i].y : 0),
         ease: 'power1.inOut',
         stagger: 0.02,
-      },
+      } as any,
       0,
     )
     .to(
       nodes,
       {
-        x: (i) => (NODE_OFFSETS[i] ? NODE_OFFSETS[i].x * 0.35 : 0),
-        y: (i) => (NODE_OFFSETS[i] ? NODE_OFFSETS[i].y * 0.35 : 0),
+        x: (i: number) => (NODE_OFFSETS[i] ? NODE_OFFSETS[i].x * 0.35 : 0),
+        y: (i: number) => (NODE_OFFSETS[i] ? NODE_OFFSETS[i].y * 0.35 : 0),
         ease: 'power3.out',
         stagger: 0.02,
-      },
+      } as any,
       0.72,
     )
     .to(
@@ -70,7 +73,7 @@ export function initNetworkOutro({ reducedMotion }) {
         filter: 'blur(10px)',
         y: -24,
         ease: 'none',
-      },
+      } as any,
       0,
     )
     .to(
@@ -78,7 +81,7 @@ export function initNetworkOutro({ reducedMotion }) {
       {
         opacity: 0.55,
         ease: 'none',
-      },
+      } as any,
       0,
     );
 }

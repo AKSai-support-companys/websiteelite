@@ -1,13 +1,10 @@
 import React, { ReactNode } from 'react';
 
-interface SectionProps {
+interface SectionProps extends React.HTMLAttributes<HTMLElement> {
   children: ReactNode;
-  className?: string;
   padding?: 'none' | 'sm' | 'md' | 'lg' | 'xl';
   background?: 'transparent' | 'primary' | 'secondary' | 'glass' | 'gradient';
-  id?: string;
   minHeight?: 'auto' | 'screen' | 'partial';
-  style?: React.CSSProperties;
 }
 
 const paddingStyles = {
@@ -43,9 +40,9 @@ export const Section: React.FC<SectionProps> = ({
   className = '',
   padding = 'md',
   background = 'transparent',
-  id,
   minHeight = 'auto',
   style,
+  ...rest
 }) => {
   const combinedStyle = {
     ...paddingStyles[padding],
@@ -62,8 +59,8 @@ export const Section: React.FC<SectionProps> = ({
   ].join(' ');
 
   return (
-    <section id={id} style={combinedStyle} className={combinedClassName}>
-      <div 
+    <section {...rest} style={combinedStyle} className={combinedClassName}>
+      <div
         style={{
           maxWidth: '1280px',
           margin: '0 auto',
