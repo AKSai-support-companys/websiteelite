@@ -1,0 +1,217 @@
+.stabilization-section {
+  background: linear-gradient(135deg, 
+    #0a0a0a 0%, 
+    #121212 30%, 
+    #0a0a0a 60%, 
+    #111 90%, 
+    #0a0a0a 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.stabilization-content {
+  max-width: 900px;
+  text-align: center;
+  position: relative;
+  z-index: 10;
+  animation: stabilizationFade 25s ease-in-out infinite;
+}
+
+@keyframes stabilizationFade {
+  0%, 100% { 
+    opacity: 0.8;
+    transform: translateY(0px) scale(0.98);
+  }
+  50% { 
+    opacity: 1;
+    transform: translateY(-5px) scale(1);
+  }
+}
+
+.stabilization-header {
+  margin-bottom: 60px;
+  position: relative;
+}
+
+.stabilization-headline {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 200;
+  color: #e0e0e0;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  background: linear-gradient(135deg, #ffffff 0%, #b0b0b0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.stabilization-body {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  margin-bottom: 80px;
+}
+
+.primary-copy {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.stabilization-text {
+  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+  line-height: 1.7;
+  color: #d0d0d0;
+  font-weight: 300;
+  margin-bottom: 30px;
+  opacity: 0.9;
+  transition: opacity 0.5s ease;
+}
+
+.stabilization-text:hover {
+  opacity: 1;
+}
+
+.secondary-copy {
+  max-width: 600px;
+  margin: 0 auto;
+  padding-top: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.stabilization-subtext {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  line-height: 1.6;
+  color: #a0a0a0;
+  font-weight: 300;
+  margin-bottom: 25px;
+  opacity: 0.8;
+  transition: opacity 0.5s ease;
+}
+
+.stabilization-subtext:hover {
+  opacity: 0.95;
+  color: #c0c0c0;
+}
+
+.stabilization-footer {
+  position: relative;
+  margin-top: 80px;
+}
+
+.final-statement {
+  position: relative;
+  padding: 40px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.final-copy {
+  font-size: clamp(1.2rem, 3vw, 1.6rem);
+  font-weight: 200;
+  color: #ffffff;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  opacity: 0.9;
+  position: relative;
+}
+
+.final-copy::before {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(255, 255, 255, 0.3) 50%, 
+    transparent 100%);
+}
+
+/* Subtle background elements */
+.stabilization-section::before {
+  content: '';
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, 
+    rgba(255, 255, 255, 0.01) 0%, 
+    transparent 70%);
+  border-radius: 50%;
+  animation: subtleFloat 30s ease-in-out infinite;
+  z-index: 1;
+}
+
+.stabilization-section::after {
+  content: '';
+  position: absolute;
+  bottom: 20%;
+  right: 10%;
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(circle, 
+    rgba(255, 255, 255, 0.008) 0%, 
+    transparent 70%);
+  border-radius: 50%;
+  animation: subtleFloat 35s ease-in-out infinite reverse;
+  z-index: 1;
+}
+
+@keyframes subtleFloat {
+  0%, 100% { 
+    transform: translateY(0px) rotate(0deg);
+    opacity: 0.5;
+  }
+  33% { 
+    transform: translateY(-15px) rotate(120deg);
+    opacity: 0.8;
+  }
+  66% { 
+    transform: translateY(10px) rotate(240deg);
+    opacity: 0.3;
+  }
+}
+
+/* Depth effect on stabilization content */
+.stabilization-section .depth-transform {
+  transform: translateZ(0) scale(0.95);
+  transition: all 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.stabilization-section:hover .depth-transform {
+  transform: translateZ(20px) scale(1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .stabilization-body {
+    gap: 40px;
+    margin-bottom: 60px;
+  }
+  
+  .stabilization-footer {
+    margin-top: 60px;
+  }
+  
+  .final-statement {
+    padding: 30px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding: 60px 20px;
+  }
+  
+  .stabilization-body {
+    gap: 30px;
+    margin-bottom: 40px;
+  }
+  
+  .stabilization-footer {
+    margin-top: 40px;
+  }
+}
