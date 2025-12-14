@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GSAP + ScrollTrigger Scroll Animations</title>
+  </head>
+  <body>
+    <main>
+      <section class="section hero" data-section="hero">
+        <div class="hero__bg" data-hero-bg aria-hidden="true"></div>
+        <div class="hero__content" data-hero-content>
+          <h1 class="hero__title">Engineered Network</h1>
+          <p class="hero__sub">Scroll to activate each motion block — no autoplay.</p>
+        </div>
+      </section>
+
+      <section class="section system" data-section="system">
+        <header class="section__header">
+          <h2>System Panels</h2>
+          <p>Panels emerge from depth as you scroll into view.</p>
+        </header>
+        <div class="system__grid" data-system-panels>
+          <article class="system-panel" data-system-panel>
+            <h3>Identity</h3>
+            <p>Auth, permissions, and policy enforcement.</p>
+          </article>
+          <article class="system-panel" data-system-panel>
+            <h3>Telemetry</h3>
+            <p>Signals, traces, and live reliability metrics.</p>
+          </article>
+          <article class="system-panel" data-system-panel>
+            <h3>Orchestration</h3>
+            <p>Flow control across services and boundaries.</p>
+          </article>
+          <article class="system-panel" data-system-panel>
+            <h3>Edge</h3>
+            <p>Fast decisions close to your users.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section secondary" data-section="secondary-services">
+        <header class="section__header">
+          <h2>Secondary Services</h2>
+          <p>Data lines animate as they come into view.</p>
+        </header>
+
+        <div class="secondary__viz" data-secondary-viz aria-hidden="true">
+          <svg class="secondary__svg" viewBox="0 0 820 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path class="data-line" data-data-line d="M20 190 C 180 70, 330 70, 480 150 S 710 220, 800 40" />
+            <path class="data-line" data-data-line d="M20 60 C 180 200, 330 200, 480 110 S 690 10, 800 170" />
+            <path class="data-line" data-data-line d="M120 210 C 200 120, 350 120, 430 180 S 650 240, 780 90" />
+          </svg>
+        </div>
+
+        <div class="secondary__labels" data-secondary-labels>
+          <div class="chip">Search</div>
+          <div class="chip">Events</div>
+          <div class="chip">Storage</div>
+          <div class="chip">Payments</div>
+          <div class="chip">Email</div>
+        </div>
+      </section>
+
+      <section class="section engagement" data-section="engagement">
+        <header class="section__header">
+          <h2>Engagement Modules</h2>
+          <p>Scroll-driven focus/dim interaction.</p>
+        </header>
+
+        <div class="engagement__stack" data-engagement-stack>
+          <article class="engagement-module" data-engagement-module>
+            <h3>Acquire</h3>
+            <p>Bring the right users into the system.</p>
+          </article>
+          <article class="engagement-module" data-engagement-module>
+            <h3>Activate</h3>
+            <p>Guide onboarding and first value.</p>
+          </article>
+          <article class="engagement-module" data-engagement-module>
+            <h3>Retain</h3>
+            <p>Personalize journeys to keep momentum.</p>
+          </article>
+          <article class="engagement-module" data-engagement-module>
+            <h3>Expand</h3>
+            <p>Unlock cross-sell and deeper adoption.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section network" data-section="network">
+        <header class="section__header">
+          <h2>Network</h2>
+          <p>Final slow-down and fade is mapped to scroll.</p>
+        </header>
+
+        <div class="network__frame" data-network-frame>
+          <div class="network__nodes" data-network-nodes aria-hidden="true">
+            <span class="node"></span>
+            <span class="node"></span>
+            <span class="node"></span>
+            <span class="node"></span>
+            <span class="node"></span>
+            <span class="node"></span>
+            <span class="node"></span>
+            <span class="node"></span>
+            <span class="node"></span>
+            <span class="node"></span>
+            <span class="node"></span>
+            <span class="node"></span>
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <p>
+          Hooks + section contracts documented in <code>docs/scroll-animations.md</code>.
+        </p>
+      </footer>
+    </main>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
