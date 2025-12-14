@@ -1,6 +1,6 @@
 # Responsive Polish Implementation
 
-This document outlines the responsive design improvements applied to the SPA Foundation for optimal viewing across all device sizes while maintaining the cinematic midnight aesthetic.
+This document outlines the responsive design improvements applied to the cinematic site for optimal viewing across all device sizes while maintaining the cinematic midnight aesthetic.
 
 ## Overview
 

@@ -24,9 +24,7 @@ function App() {
       <Stabilization />
 
       <footer className="footer">
-        <p>
-          Scroll contracts live in <code>docs/scroll-animations.md</code>.
-        </p>
+        <p>Telemetry is continuous. Intervention is explicit.</p>
       </footer>
     </div>
   );
