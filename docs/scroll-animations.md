@@ -7,7 +7,7 @@ This project is organized so each section owns its own ScrollTrigger/timeline de
 All animation entry points accept `{ reducedMotion }`.
 
 - When `prefers-reduced-motion: reduce` is enabled, modules avoid motion/blur/depth shifts.
-- Triggers are killed in `src/main.js` after initial styles are applied.
+- Triggers are killed in `src/hooks/useCinematicScrollAnimations.ts` after initial styles are applied.
 
 ## Section contracts / hooks
 
@@ -19,7 +19,7 @@ All animation entry points accept `{ reducedMotion }`.
 
 Animation: scroll-scrubbed blur + slight scale on background while hero content fades up/out.
 
-Implementation: `src/animations/hero.js`
+Implementation: `src/animations/hero.ts`
 
 ### System panels emerging from depth
 
@@ -28,7 +28,7 @@ Implementation: `src/animations/hero.js`
 
 Animation: panels start pushed back in Z + blurred; on scroll into view they lift forward (z/y/rotateX) and sharpen.
 
-Implementation: `src/animations/systemPanels.js`
+Implementation: `src/animations/systemPanels.ts`
 
 ### Secondary Services data lines
 
@@ -38,7 +38,7 @@ Implementation: `src/animations/systemPanels.js`
 
 Animation: SVG stroke draw (dashoffset) + label fade/blur-in.
 
-Implementation: `src/animations/secondaryServices.js`
+Implementation: `src/animations/secondaryServices.ts`
 
 ### Engagement modules focus/dim interaction
 
@@ -47,7 +47,7 @@ Implementation: `src/animations/secondaryServices.js`
 
 Animation: as each module hits the focus band, it becomes fully opaque/sharp/scale=1 while others dim and slightly blur.
 
-Implementation: `src/animations/engagementModules.js`
+Implementation: `src/animations/engagementModules.ts`
 
 ### Network outro slow-down + fade
 
@@ -57,4 +57,4 @@ Implementation: `src/animations/engagementModules.js`
 
 Animation: scroll-scrubbed node drift with an ease-out “slowdown” near the end, plus fade/blur of the network frame.
 
-Implementation: `src/animations/networkOutro.js`
+Implementation: `src/animations/networkOutro.ts`
