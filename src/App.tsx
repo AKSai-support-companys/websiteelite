@@ -23,7 +23,7 @@ function App() {
         background="gradient"
         className="flex items-center justify-center"
       >
-        <div style={{ textAlign: 'center' }}>
+        <div style={{ textAlign: 'center' }} role="region" aria-label="Hero section">
           <h1 style={{ 
             fontSize: 'var(--font-size-6xl)',
             fontWeight: 'var(--font-weight-extrabold)',
@@ -33,7 +33,8 @@ function App() {
             WebkitBackgroundClip: 'text',
             backgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
-            marginBottom: 'var(--spacing-lg)'
+            marginBottom: 'var(--spacing-lg)',
+            minHeight: 'auto',
           }}>
             SPA Foundation
           </h1>
@@ -43,17 +44,22 @@ function App() {
             lineHeight: 'var(--line-height-snug)',
             letterSpacing: 'var(--letter-spacing-wide)',
             color: 'var(--color-gray-200)',
-            marginBottom: 'var(--spacing-xl)'
+            marginBottom: 'var(--spacing-xl)',
+            maxWidth: '90vw',
+            margin: '0 auto var(--spacing-xl) auto',
           }}>
             A modern single-page application foundation with Vite, React, TypeScript, and GSAP
           </p>
-          <p style={{ 
-            fontSize: 'var(--font-size-base)',
-            fontWeight: 'var(--font-weight-normal)',
-            lineHeight: 'var(--line-height-relaxed)',
-            letterSpacing: 'var(--letter-spacing-wide)',
-            color: 'var(--color-cyan-primary)'
-          }}>
+          <p 
+            style={{ 
+              fontSize: 'var(--font-size-base)',
+              fontWeight: 'var(--font-weight-normal)',
+              lineHeight: 'var(--line-height-relaxed)',
+              letterSpacing: 'var(--letter-spacing-wide)',
+              color: 'var(--color-cyan-primary)',
+            }}
+            aria-live="polite"
+          >
             Scroll Progress: {Math.round(progress * 100)}%
           </p>
         </div>
@@ -61,11 +67,15 @@ function App() {
 
       {/* Features Section */}
       <Section padding="xl" background="primary">
-        <div style={{ 
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-          gap: 'var(--spacing-xl)'
-        }}>
+        <div 
+          role="region" 
+          aria-label="Features"
+          style={{ 
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(clamp(280px, 100%, 400px), 1fr))',
+            gap: 'var(--spacing-xl)'
+          }}
+        >
           <Panel variant="glass" style={{ padding: 'var(--spacing-xl)' }}>
             <h3 style={{ 
               fontSize: 'var(--font-size-3xl)',
