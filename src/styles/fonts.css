@@ -1,0 +1,92 @@
+/* Modern Wide-Tracked Sans-Serif Typography via @font-face */
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+}
+
+@font-face {
+  font-family: 'SF Pro Display';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+  /* Fallback to Inter for SF Pro Display since it's a system font */
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 100 800;
+  font-display: swap;
+  src: url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100..800&display=swap');
+}
+
+/* Enhanced Typography Classes */
+.text-display {
+  font-size: var(--font-size-6xl);
+  font-weight: var(--font-weight-extrabold);
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--letter-spacing-wider);
+  background: linear-gradient(135deg, var(--color-cyan-primary) 0%, var(--color-gray-100) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-headline {
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--letter-spacing-wide);
+  color: var(--color-gray-100);
+}
+
+.text-title {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-snug);
+  letter-spacing: var(--letter-spacing-wide);
+  color: var(--color-gray-200);
+}
+
+.text-body {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-relaxed);
+  letter-spacing: var(--letter-spacing-wide);
+  color: var(--color-gray-200);
+}
+
+.text-caption {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-normal);
+  letter-spacing: var(--letter-spacing-widest);
+  color: var(--color-gray-400);
+  text-transform: uppercase;
+}
+
+.text-mono {
+  font-family: var(--font-family-mono);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-normal);
+  color: var(--color-gray-300);
+}
+
+/* Wide tracking variants */
+.text-tracking-wide {
+  letter-spacing: var(--letter-spacing-wide);
+}
+
+.text-tracking-wider {
+  letter-spacing: var(--letter-spacing-wider);
+}
+
+.text-tracking-widest {
+  letter-spacing: var(--letter-spacing-widest);
+}
