@@ -1,0 +1,67 @@
+.core-ai-section {
+  background: linear-gradient(135deg, 
+    #0a0a0a 0%, 
+    #1a1a1a 50%, 
+    #0a0a0a 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.core-ai-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.02) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.01) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.core-ai-content {
+  max-width: 800px;
+  text-align: center;
+  position: relative;
+  z-index: 10;
+}
+
+.core-headline {
+  font-size: clamp(3rem, 8vw, 6rem);
+  margin-bottom: 60px;
+  line-height: 1.1;
+  background: linear-gradient(135deg, #ffffff 0%, #b0b0b0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.5));
+}
+
+.core-copy-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+}
+
+.core-copy {
+  font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+  max-width: 600px;
+  opacity: 0.9;
+  transition: opacity 0.3s ease;
+}
+
+.core-copy:hover {
+  opacity: 1;
+}
+
+/* Depth effects for core section */
+.core-ai-section .depth-transform {
+  animation: coreFloat 20s ease-in-out infinite;
+}
+
+@keyframes coreFloat {
+  0%, 100% { transform: translateY(0px) rotateX(0deg) rotateY(0deg); }
+  50% { transform: translateY(-10px) rotateX(1deg) rotateY(-1deg); }
+}

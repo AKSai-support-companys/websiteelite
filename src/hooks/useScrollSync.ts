@@ -30,21 +30,28 @@ export const useScrollSync = (
   options: ScrollSyncOptions = {}
 ): ScrollSyncReturn => {
   const {
-    trigger = 'body',
-    start = 'top top+=100',
-    end = 'bottom top',
-    scrub = 1,
-    pin = false,
-    anticipatePin = 1,
+    trigger,
+    start,
+    end,
+    scrub,
+    pin,
+    anticipatePin,
     onUpdate,
     onComplete,
     onStart,
-    toggleActions = 'play none none none',
-    markers = false,
+    toggleActions,
+    markers,
   } = options;
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const config = { trigger, start, end, scrub, pin, anticipatePin, toggleActions, markers };
+  // Future ScrollTrigger integration placeholders
+  void trigger;
+  void start;
+  void end;
+  void scrub;
+  void pin;
+  void anticipatePin;
+  void toggleActions;
+  void markers;
 
   const triggerRef = useRef<ScrollTrigger | null>(null);
   const progressRef = useRef(0);

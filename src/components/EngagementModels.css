@@ -1,0 +1,253 @@
+.engagement-section {
+  background: linear-gradient(180deg, 
+    #0a0a0a 0%, 
+    #111111 20%, 
+    #0a0a0a 40%, 
+    #151515 60%, 
+    #0a0a0a 80%, 
+    #111111 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.engagement-content {
+  width: 100%;
+  max-width: 1400px;
+  padding: 0 40px;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 80px;
+  position: relative;
+  z-index: 10;
+}
+
+.engagement-headline {
+  font-size: clamp(3rem, 6vw, 5rem);
+  margin-bottom: 30px;
+  font-weight: 200;
+  background: linear-gradient(135deg, #ffffff 0%, #b0b0b0 50%, #888 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.engagement-subhead {
+  font-size: 1.2rem;
+  color: #888;
+  max-width: 600px;
+  margin: 0 auto;
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+.focus-dim-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: 40px;
+  position: relative;
+  perspective: 1000px;
+}
+
+.engagement-module {
+  position: relative;
+  transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  cursor: pointer;
+  transform-origin: center;
+}
+
+.engagement-module.focused {
+  opacity: 1;
+  transform: scale(1.02) translateY(-8px);
+  z-index: 10;
+  filter: none;
+}
+
+.engagement-module.dimmed {
+  opacity: 0.25;
+  filter: blur(1px);
+  transform: scale(0.98);
+  z-index: 1;
+}
+
+.module-content {
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 40px;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.engagement-module.focused .module-content {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 
+    0 30px 60px rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(255, 255, 255, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.engagement-module.dimmed .module-content {
+  background: rgba(255, 255, 255, 0.01);
+  border-color: rgba(255, 255, 255, 0.05);
+}
+
+.module-header {
+  margin-bottom: 30px;
+  position: relative;
+  z-index: 2;
+}
+
+.module-title {
+  font-size: 1.8rem;
+  font-weight: 300;
+  color: #ffffff;
+  margin-bottom: 10px;
+  letter-spacing: 0.02em;
+  transition: color 0.3s ease;
+}
+
+.engagement-module.focused .module-title {
+  color: #ffffff;
+}
+
+.module-subtitle {
+  font-size: 0.95rem;
+  color: #888;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: color 0.3s ease;
+}
+
+.engagement-module.focused .module-subtitle {
+  color: #aaa;
+}
+
+.module-body {
+  margin-bottom: 30px;
+  position: relative;
+  z-index: 2;
+}
+
+.module-description {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #c0c0c0;
+  margin-bottom: 25px;
+  font-weight: 300;
+  transition: color 0.3s ease;
+}
+
+.engagement-module.focused .module-description {
+  color: #e0e0e0;
+}
+
+.focus-area {
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 12px;
+  border-left: 3px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.engagement-module.focused .focus-area {
+  background: rgba(255, 255, 255, 0.04);
+  border-left-color: rgba(255, 255, 255, 0.3);
+}
+
+.focus-label {
+  font-size: 0.85rem;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.focus-description {
+  font-size: 0.95rem;
+  color: #b0b0b0;
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+.engagement-module.focused .focus-description {
+  color: #d0d0d0;
+}
+
+.module-metrics {
+  position: relative;
+  z-index: 2;
+}
+
+.metrics-title {
+  font-size: 0.9rem;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 500;
+  margin-bottom: 15px;
+  transition: color 0.3s ease;
+}
+
+.engagement-module.focused .metrics-title {
+  color: #aaa;
+}
+
+.metrics-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.metric-item {
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  font-size: 0.85rem;
+  color: #b0b0b0;
+  font-weight: 300;
+  transition: all 0.3s ease;
+}
+
+.engagement-module.focused .metric-item {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: #e0e0e0;
+  transform: translateY(-2px);
+}
+
+.metric-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Background pattern */
+.engagement-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    linear-gradient(90deg, 
+      transparent 0%, 
+      rgba(255, 255, 255, 0.01) 50%, 
+      transparent 100%),
+    repeating-linear-gradient(45deg,
+      transparent 0px,
+      rgba(255, 255, 255, 0.005) 1px,
+      transparent 2px,
+      transparent 40px);
+  pointer-events: none;
+  z-index: 1;
+}
