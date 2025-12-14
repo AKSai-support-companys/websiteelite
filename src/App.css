@@ -1,0 +1,17 @@
+.App {
+  min-height: 100vh;
+  background: #0a0a0a;
+  color: #e0e0e0;
+}
+
+/* Smooth scrolling between sections */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Remove default margins and ensure full height */
+body, #root {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
